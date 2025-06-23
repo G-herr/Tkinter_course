@@ -1,10 +1,12 @@
 from tkinter import *
 from PIL import Image, ImageTk
+from pathlib import Path
 
 window = Tk()
 window.geometry("500x500")
 
-photo = ImageTk.PhotoImage(Image.open('C:\\Users\\gusta\\Downloads\\django_logo.png').resize((100,100)))
+image_path = Path("Images") / "django_logo.png"
+photo = ImageTk.PhotoImage(Image.open(image_path).resize((100,100)))
 #photo = PhotoImage(file='C:\\Users\\gusta\\Downloads\\django_logo.png')
 
 

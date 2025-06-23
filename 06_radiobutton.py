@@ -1,5 +1,6 @@
 from tkinter import *
 from PIL import Image, ImageTk
+from pathlib import Path
 
 food = ["Pizza","Burger", "Hotdog"]
 
@@ -10,9 +11,13 @@ def order():
 
 window = Tk()
 
-pizzaImage = ImageTk.PhotoImage(Image.open('Images\\pizza.png').resize((50,50)))
-burgerImage = ImageTk.PhotoImage(Image.open('Images\\burger.png').resize((50,50)))
-hotdogImage = ImageTk.PhotoImage(Image.open('Images\\hotdog.png').resize((50,50)))
+burger_path = Path("Images") / "burger.png"
+pizza_path = Path("Images") / "pizza.png"
+hotdog_path = Path("Images") / "hotdog.png"
+
+pizzaImage = ImageTk.PhotoImage(Image.open(burger_path).resize((50,50)))
+burgerImage = ImageTk.PhotoImage(Image.open(pizza_path).resize((50,50)))
+hotdogImage = ImageTk.PhotoImage(Image.open(hotdog_path).resize((50,50)))
 foodImages = [pizzaImage,burgerImage,hotdogImage]
 x = IntVar()
 
